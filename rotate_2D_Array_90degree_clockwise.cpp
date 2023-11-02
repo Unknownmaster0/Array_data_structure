@@ -39,24 +39,23 @@ void rotate90(vector<vector<int>> arr)
     int total_row = arr.size();
     int total_col = arr[0].size();
 
-    // vector<vector<int>> ans;
+    vector<vector<int>> ans;
 
     for (int col = 0; col < total_col; col++)
     {
-        // vector<int> temp;// 2d vector me store krne ke liye pahle 1d vector me store krwalo and then 1d vector ko push back kr do 2d vector me.
+        vector<int> temp;// 2d vector me store krne ke liye pahle 1d vector me store krwalo and then 1d vector ko push back kr do 2d vector me.
 
         for (int row = 0; row < total_row; row++)
         {
 // aise 2d vector me push back nhi hota hai // ans[col][row]  =  arr[total_row - 1 - row][col]; 
-            arr[col][row] = arr[total_row - 1 - row][col];// main logic is here, actually we are assigning values row wise thus need to constant the row term,so used col in place of row
+            // arr[col][row] = arr[total_row - 1 - row][col];// main logic is here, actually we are assigning values row wise thus need to constant the row term,so used col in place of row
             // right side is the first col value that we are assigning to 1st row which is in left.
-            // temp.push_back(arr[total_row - 1 - row][col]);
+            temp.push_back(arr[total_row - 1 - row][col]);
         }
-        // ans.push_back(temp);
+        ans.push_back(temp);
     }
 
-    // printArray(ans);
-    printArray(arr);
+    printArray(ans);
 
     return;
 }
